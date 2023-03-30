@@ -1,9 +1,20 @@
 {
   "name": "node-db4-project",
   "version": "1.0.0",
-  "scripts": {},
+  "scripts": {
+    "server": "nodemon index.js",
+    "start": "node index.js",
+    "resetdb": "knex migrate:rollback && knex migrate:latest && knex seed:run",
+    "seed": "knex seed:run",
+    "rollback": "knex migrate:rollback"
+  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/Workintech/node-db4-project.git"
+  },
+  "dependencies": {
+    "db-json": "^0.1.0",
+    "knex": "^2.4.2",
+    "sqlite3": "^5.1.6"
   }
 }
